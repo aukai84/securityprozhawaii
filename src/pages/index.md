@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Great coffee with a conscience
-image: /img/oahu-1280x720.jpg
+image: /img/oahu-panorama-1400x500.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
