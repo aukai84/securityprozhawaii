@@ -7,7 +7,7 @@ import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-export const ProductPageTemplate = ({
+export const ServicePageTemplate = ({
   image,
   title,
   heading,
@@ -102,7 +102,7 @@ export const ProductPageTemplate = ({
   </div>
 )
 
-ProductPageTemplate.propTypes = {
+ServicePageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -126,12 +126,13 @@ ProductPageTemplate.propTypes = {
   }),
 }
 
-const ProductPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+const ServicePage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+  console.log('data', data)
 
   return (
     <Layout>
-      <ProductPageTemplate
+      <ServicePageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -146,7 +147,7 @@ const ProductPage = ({ data }) => {
   )
 }
 
-ProductPage.propTypes = {
+ServicePage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -154,10 +155,10 @@ ProductPage.propTypes = {
   }),
 }
 
-export default ProductPage
+export default ServicePage 
 
-export const productPageQuery = graphql`
-  query ProductPage($id: String!) {
+export const servicePageQuery = graphql`
+  query ServicePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
