@@ -127,7 +127,8 @@ ServicePageTemplate.propTypes = {
 }
 
 const ServicePage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
+  console.log('data', data)
 
   return (
     <Layout>
@@ -156,7 +157,7 @@ ServicePage.propTypes = {
 
 export default ServicePage 
 
-export const productPageQuery = graphql`
+export const servicePageQuery = graphql`
   query ServicePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
