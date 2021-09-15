@@ -156,8 +156,8 @@ export const IndexPageTemplate = ({
                           </div>
                         </div>
                         <div className="field">
-                          <button className="button is-link" type="submit">
-                            Send
+                          <button className="button is-primary is-light is-link" type="submit">
+                            CONNECT WITH OUR TEAM 
                           </button>
                         </div>
                       </form>
