@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-const FeatureGrid = ({ gridItems }) => (
+const FeatureGrid = ({ gridItems, imageWidth }) => (
   <div className="columns is-multiline">
     {gridItems.map((item) => (
       <div key={item.text} className="column is-6">
@@ -11,12 +11,11 @@ const FeatureGrid = ({ gridItems }) => (
             <div
               style={{
                 display: 'inline-block',
-                width: '100px',
+                width: imageWidth,
               }}
             >
               <PreviewCompatibleImage imageInfo={item} />
             </div>
-            {console.log('item', item)}
             <h2>{item.heading}</h2>
             <p>{item.text}</p>
           </div>
@@ -27,6 +26,7 @@ const FeatureGrid = ({ gridItems }) => (
 )
 
 FeatureGrid.propTypes = {
+  imageWidth: PropTypes.string,
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),

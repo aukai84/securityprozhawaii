@@ -48,7 +48,7 @@ export const ServicePageTemplate = ({
           </div>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <Features gridItems={intro.blurbs} />
+              <Features imageWidth="200px" gridItems={intro.blurbs} />
               <div className="columns">
                 <div className="column is-7">
                   <h3 className="has-text-weight-semibold is-size-3">
@@ -57,7 +57,7 @@ export const ServicePageTemplate = ({
                   <p>{main.description}</p>
                 </div>
               </div>
-              <div className="tile is-ancestor">
+              {/* <div className="tile is-ancestor">
                 <div className="tile is-vertical">
                   <div className="tile">
                     <div className="tile is-parent is-vertical">
@@ -77,7 +77,7 @@ export const ServicePageTemplate = ({
                     </article>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <Testimonials testimonials={testimonials} />
               <div
                 className="full-width-image-container"
@@ -128,7 +128,7 @@ ServicePageTemplate.propTypes = {
 
 const ServicePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log('data', data)
+  console.log('data', frontmatter.intro)
 
   return (
     <Layout>
@@ -181,6 +181,7 @@ export const servicePageQuery = graphql`
               }
             }
             text
+            heading 
           }
           heading
           description

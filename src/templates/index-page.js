@@ -94,7 +94,7 @@ export const IndexPageTemplate = ({
                     <p>{description}</p>
                   </div>
                 </div>
-                <Features gridItems={intro.blurbs} />
+                <Features imageWidth="125px" gridItems={intro.blurbs} />
                 <section className="section">
                   <div className="container">
                     <div className="content">
