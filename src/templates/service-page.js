@@ -41,22 +41,64 @@ export const ServicePageTemplate = ({
       <div className="container">
         <div className="section">
           <div className="columns">
-            <div className="column is-7 is-offset-1">
+            <div className="column is-8 is-offset-2 has-text-centered">
               <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
-              <p>{description}</p>
+              <p className="pb-6">{description}</p>
             </div>
           </div>
           <div className="columns">
             <div className="column is-10 is-offset-1">
-              <Features imageWidth="200px" gridItems={intro.blurbs} />
-              <div className="columns">
+              <div className="columns is-multiline">
+                {intro.blurbs.map((item, i) => {
+                  const odd = i % 2 !== 0;
+                  return (
+                    <div className="column is-12">
+                      <div className="columns">
+                        {odd ? (
+                          <>
+                            <div className="column is-6">
+                              <div 
+                                style={{
+                                  width: "100%",
+                                  height: 'auto'
+                                }}
+                              >
+                                <PreviewCompatibleImage imageInfo={item} />
+                              </div>
+                            </div>
+                            <div className="column is-6 has-text-centered pt-4">
+                              <h3>{item.heading}</h3>
+                              <p>{item.text}</p>
+                            </div>
+                          </>
+                        ) : 
+                          <>
+                            <div className="column is-6 has-text-centered">
+                              <h3>{item.heading}</h3>
+                              <p>{item.text}</p>
+                            </div>
+                            <div style={{
+                              width: "100%",
+                              height: 'auto'
+                            }}>
+                              <PreviewCompatibleImage imageInfo={item} />
+                            </div>
+                          </>
+                        }
+                    </div>
+                    </div>
+                  )
+                })} 
+              </div>
+              {/* <Features imageWidth="200px" gridItems={intro.blurbs} /> */}
+              {/* <div className="columns">
                 <div className="column is-7">
                   <h3 className="has-text-weight-semibold is-size-3">
                     {main.heading}
                   </h3>
                   <p>{main.description}</p>
                 </div>
-              </div>
+              </div> */}
               {/* <div className="tile is-ancestor">
                 <div className="tile is-vertical">
                   <div className="tile">
@@ -78,9 +120,9 @@ export const ServicePageTemplate = ({
                   </div>
                 </div>
               </div> */}
-              <Testimonials testimonials={testimonials} />
-              <div
-                className="full-width-image-container"
+              {/* <Testimonials testimonials={testimonials} /> */}
+              {/* <div
+                className="full-width-image-container my-8"
                 style={{
                   backgroundImage: `url(${
                     fullImage.childImageSharp
@@ -88,12 +130,12 @@ export const ServicePageTemplate = ({
                       : fullImage
                   })`,
                 }}
-              />
-              <h2 className="has-text-weight-semibold is-size-2">
+              /> */}
+              {/* <h2 className="has-text-weight-semibold is-size-2">
                 {pricing.heading}
               </h2>
               <p className="is-size-5">{pricing.description}</p>
-              <Pricing data={pricing.plans} />
+              <Pricing data={pricing.plans} /> */}
             </div>
           </div>
         </div>

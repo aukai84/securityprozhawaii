@@ -70,7 +70,7 @@ export const IndexPageTemplate = ({
           <div className="columns">
             <div className="column is-10 is-offset-1">
               <div className="content">
-                <div className="content pb-6 border-bottom">
+                <div className="content pb-6 border-bottom has-text-centered">
                   <div className="pb-6 has-text-centered">
                     <img src={logoWithText} />
                   </div>
