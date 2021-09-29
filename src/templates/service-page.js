@@ -50,11 +50,11 @@ export const ServicePageTemplate = ({
             <div className="column is-10 is-offset-1">
               <div className="columns is-multiline">
                 {intro.blurbs.map((item, i) => {
-                  const odd = i % 2 !== 0;
+                  const even = i % 2 == 0;
                   return (
                     <div className="column is-12">
                       <div className="columns">
-                        {odd ? (
+                        {even ? (
                           <>
                             <div className="column is-6">
                               <div 

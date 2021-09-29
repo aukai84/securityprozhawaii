@@ -98,9 +98,9 @@ export const IndexPageTemplate = ({
                 <section className="section">
                   <div className="container">
                     <div className="content">
-                      <h1>Contact</h1>
+                      <h1>Get in touch with a specialist</h1>
                       <form
-                        name="contact"
+                        name="home-page"
                         method="post"
                         action="/contact/thanks/"
                         data-netlify="true"
