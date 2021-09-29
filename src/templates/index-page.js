@@ -9,6 +9,12 @@ import BlogRoll from '../components/BlogRoll'
 import logoWithText from '../img/logo_with_text.png'
 import productsImage from '../img/products.jpg';
 
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 export const IndexPageTemplate = ({
   image,
   title,
@@ -20,6 +26,28 @@ export const IndexPageTemplate = ({
 }) => {
 
   const [formName, setFormName] = useState('service');
+  const [formValues, setFormValues] = useState({ isValidated: false });
+
+  const handleChange = (e) => setFormValues((formValues) => ({
+    ...formValues,
+    [e.target.name]: [e.target.value]
+  })); 
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        'contact': formName,
+        ...formValues,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
+  }
 
   return (
     <div>
@@ -111,13 +139,14 @@ export const IndexPageTemplate = ({
                           action="/contact/thanks/"
                           data-netlify="true"
                           data-netlify-honeypot="bot-field"
+                          onSubmit={handleSubmit}
                         >
                           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                           <input type="hidden" name="form-name" value="contact" />
                           <div hidden>
                             <label>
                               Don’t fill this out:{' '}
-                              <input name="bot-field"/>
+                              <input name="bot-field" onChange={handleChange} />
                             </label>
                           </div>
                           <div className="field">
@@ -131,6 +160,7 @@ export const IndexPageTemplate = ({
                                 name={'name'}
                                 id={'name'}
                                 required={true}
+                                onChange={handleChange}
                               />
                             </div>
                           </div>
@@ -145,6 +175,7 @@ export const IndexPageTemplate = ({
                                 name={'phoneNumber'}
                                 id={'phoneNumber'}
                                 required={true}
+                                onChange={handleChange}
                               />
                             </div>
                           </div>
@@ -159,6 +190,7 @@ export const IndexPageTemplate = ({
                                 name={'email'}
                                 id={'email'}
                                 required={true}
+                                onChange={handleChange}
                               />
                             </div>
                           </div>
@@ -167,7 +199,7 @@ export const IndexPageTemplate = ({
                             Who would you like to get in touch with? 
                             </label>
                             <div className="control">
-                              <div className="select">
+                              <div className="select is-medium">
                                 <select 
                                 defaultValue="default"
                                 className="select"
@@ -176,9 +208,9 @@ export const IndexPageTemplate = ({
                                 required={true}
                                 onChange={(e) => setFormName(e.target.value)}
                                 >
-                                  <option value="default">Select...</option>
-                                  <option value="service" >Service</option>
+                                  <option value="default">Select ... </option>
                                   <option value="sales" >Sales</option>
+                                  <option value="service" >Service</option>
                                 </select>
                               </div>
                             </div>
@@ -193,6 +225,7 @@ export const IndexPageTemplate = ({
                                 name={'message'}
                                 id={'message'}
                                 required={true}
+                                onChange={handleChange}
                               />
                             </div>
                           </div>
