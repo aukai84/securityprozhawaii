@@ -29,10 +29,13 @@ export const IndexPageTemplate = ({
   const [formName, setFormName] = useState('service');
   const [formValues, setFormValues] = useState({ isValidated: false });
 
-  const handleChange = (e) => setFormValues((formValues) => ({
-    ...formValues,
-    [e.target.name]: [e.target.value]
-  })); 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues((formValues) => ({
+      ...formValues,
+      [name]: value
+    })) 
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
