@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
@@ -17,179 +17,221 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
-}) => (
-  <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+}) => {
+
+  const [formName, setFormName] = useState('sales');
+
+  return (
+    <div>
       <div
+        className="full-width-image margin-top-0"
         style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
+          backgroundImage: `url(${
+            !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+          })`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+        <div
           style={{
-            color: 'white',
+            display: 'flex',
+            height: '150px',
             lineHeight: '1',
-            padding: '0.25em',
+            justifyContent: 'space-around',
+            alignItems: 'left',
+            flexDirection: 'column',
           }}
         >
-          {title}
-        </h1> */}
-        {/* <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3> */}
+          {/* <h1
+            className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
+            style={{
+              color: 'white',
+              lineHeight: '1',
+              padding: '0.25em',
+            }}
+          >
+            {title}
+          </h1> */}
+          {/* <h3
+            className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+            style={{
+              boxShadow:
+                'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
+              backgroundColor: 'rgb(255, 68, 0)',
+              color: 'white',
+              lineHeight: '1',
+              padding: '0.25em',
+            }}
+          >
+            {subheading}
+          </h3> */}
+        </div>
       </div>
-    </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content pb-6 border-bottom has-text-centered">
-                  <div className="pb-6 has-text-centered">
-                    <img src={logoWithText} />
-                  </div>
-                  <div className="has-text-centered">
-                    <h1 className="title has-text-primary">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="content pt-6">
-                  <div>
-                    <img src={productsImage} />
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <h3 className="has-text-weight-semibold is-size-4">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features imageWidth="125px" gridItems={intro.blurbs} />
-                <section className="section">
-                  <div className="container">
-                    <div className="content">
-                      <h1>Get in touch with a specialist</h1>
-                      <form
-                        name="home-page"
-                        method="post"
-                        action="/contact/thanks/"
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                      >
-                        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                        <input type="hidden" name="form-name" value="contact" />
-                        <div hidden>
-                          <label>
-                            Don’t fill this out:{' '}
-                            <input name="bot-field"/>
-                          </label>
-                        </div>
-                        <div className="field">
-                          <label className="label" htmlFor={'name'}>
-                            Your name
-                          </label>
-                          <div className="control">
-                            <input
-                              className="input"
-                              type={'text'}
-                              name={'name'}
-                              id={'name'}
-                              required={true}
-                            />
-                          </div>
-                        </div>
-                        <div className="field">
-                          <label className="label" htmlFor={'email'}>
-                            Email
-                          </label>
-                          <div className="control">
-                            <input
-                              className="input"
-                              type={'email'}
-                              name={'email'}
-                              id={'email'}
-                              required={true}
-                            />
-                          </div>
-                        </div>
-                        <div className="field">
-                          <label className="label" htmlFor={'message'}>
-                            Message
-                          </label>
-                          <div className="control">
-                            <textarea
-                              className="textarea"
-                              name={'message'}
-                              id={'message'}
-                              required={true}
-                            />
-                          </div>
-                        </div>
-                        <div className="field">
-                          <button className="button is-primary is-light is-link" type="submit">
-                            CONNECT WITH OUR TEAM 
-                          </button>
-                        </div>
-                      </form>
+      <section className="section section--gradient">
+        <div className="container">
+          <div className="section">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
+                <div className="content">
+                  <div className="content pb-6 border-bottom has-text-centered">
+                    <div className="pb-6 has-text-centered">
+                      <img src={logoWithText} />
+                    </div>
+                    <div className="has-text-centered">
+                      <h1 className="title has-text-primary">{mainpitch.title}</h1>
+                    </div>
+                    <div className="tile">
+                      <h3 className="subtitle">{mainpitch.description}</h3>
                     </div>
                   </div>
-                </section>
-                {/* <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/services">
-                      See all services 
-                    </Link>
+                  <div className="content pt-6">
+                    <div>
+                      <img src={productsImage} />
+                    </div>
                   </div>
+                  <div className="columns">
+                    <div className="column is-12 has-text-centered">
+                      <h3 className="has-text-weight-semibold is-size-4">
+                        {heading}
+                      </h3>
+                      <p>{description}</p>
+                    </div>
+                  </div>
+                  <div className="border-bottom pb-6">
+                    <Features imageWidth="125px" gridItems={intro.blurbs} />
+                  </div>
+                  <section className="section">
+                    <div className="container">
+                      <div className="content">
+                        <h1>Get in touch with a specialist</h1>
+                        <form
+                          name={formName}
+                          method="post"
+                          action="/contact/thanks/"
+                          data-netlify="true"
+                          data-netlify-honeypot="bot-field"
+                        >
+                          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                          <input type="hidden" name="form-name" value="contact" />
+                          <div hidden>
+                            <label>
+                              Don’t fill this out:{' '}
+                              <input name="bot-field"/>
+                            </label>
+                          </div>
+                          <div className="field">
+                            <label className="label" htmlFor={'name'}>
+                              Name
+                            </label>
+                            <div className="control">
+                              <input
+                                className="input"
+                                type={'text'}
+                                name={'name'}
+                                id={'name'}
+                                required={true}
+                              />
+                            </div>
+                          </div>
+                          <div className="field">
+                            <label className="label" htmlFor={'phoneNumber'}>
+                            Phone Number 
+                            </label>
+                            <div className="control">
+                              <input
+                                className="input"
+                                type={'tel'}
+                                name={'phoneNumber'}
+                                id={'phoneNumber'}
+                                required={true}
+                              />
+                            </div>
+                          </div>
+                          <div className="field">
+                            <label className="label" htmlFor={'email'}>
+                              Email
+                            </label>
+                            <div className="control">
+                              <input
+                                className="input"
+                                type={'email'}
+                                name={'email'}
+                                id={'email'}
+                                required={true}
+                              />
+                            </div>
+                          </div>
+                          <div className="field">
+                            <label className="label" htmlFor={'contact'}>
+                            Who would you like to get in touch with? 
+                            </label>
+                            <div className="control">
+                              <div className="select">
+                                <select 
+                                defaultValue="default"
+                                className="select"
+                                name={'contact'}
+                                id={'contact'}
+                                required={true}
+                                onChange={(e) => setFormName(e.target.value)}
+                                >
+                                  <option value="default">Select...</option>
+                                  <option value="service" >Service</option>
+                                  <option value="sales" >Sales</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="field">
+                            <label className="label" htmlFor={'message'}>
+                              Message
+                            </label>
+                            <div className="control">
+                              <textarea
+                                className="textarea"
+                                name={'message'}
+                                id={'message'}
+                                required={true}
+                              />
+                            </div>
+                          </div>
+                          <div className="field">
+                            <button className="button is-primary is-light is-link" type="submit">
+                              CONNECT WITH OUR TEAM 
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </section>
+                  {/* <div className="columns">
+                    <div className="column is-12 has-text-centered">
+                      <Link className="btn" to="/services">
+                        See all services 
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="column is-12">
+                    <h3 className="has-text-weight-semibold is-size-2">
+                      Latest stories
+                    </h3>
+                    <BlogRoll />
+                    <div className="column is-12 has-text-centered">
+                      <Link className="btn" to="/blog">
+                        Read more
+                      </Link>
+                    </div>
+                  </div> */}
                 </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-)
+      </section>
+    </div>
+  );
+}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
