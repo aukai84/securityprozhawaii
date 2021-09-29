@@ -19,7 +19,7 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
 
-  const [formName, setFormName] = useState('sales');
+  const [formName, setFormName] = useState('service');
 
   return (
     <div>
