@@ -136,7 +136,7 @@ export const IndexPageTemplate = ({
                   <section className="section">
                     <div className="container">
                       <div className="content">
-                        <h1>Get in touch with a specialist</h1>
+                        <h1>Get in Touch With a Specialist</h1>
                         <form
                           name={formName}
                           method="post"
@@ -170,7 +170,7 @@ export const IndexPageTemplate = ({
                           </div>
                           <div className="field">
                             <label className="label" htmlFor={'phoneNumber'}>
-                            Phone Number 
+                              Phone Number 
                             </label>
                             <div className="control">
                               <input
@@ -203,7 +203,7 @@ export const IndexPageTemplate = ({
                             Who would you like to get in touch with? 
                             </label>
                             <div className="control">
-                              <div className="select is-medium">
+                              <div className="select">
                                 <select 
                                 defaultValue="default"
                                 className="select"
@@ -234,7 +234,7 @@ export const IndexPageTemplate = ({
                             </div>
                           </div>
                           <div className="field">
-                            <button className="button is-primary is-light is-link" type="submit">
+                            <button className="btn is-primary is-light is-link" type="submit">
                               CONNECT WITH OUR TEAM 
                             </button>
                           </div>

@@ -60,17 +60,19 @@ $black: #2b2523
     font-size: 18px
     font-size: 1rem
     line-height: 1.25
-    background-color: #fff
-    border-radius: .25rem
+    background-color: $primary 
     text-decoration: none
-    font-weight: 700
-    color: $primary 
+    font-weight: 500
+    border-style: none
+    color: #fff 
     text-align: center
-    -webkit-box-shadow: inset 0 0 0 2px $primary 
-    box-shadow: inset 0 0 0 2px $primary 
-    -webkit-transition: all .15s ease
-    transition: all .15s ease
+    cursor: pointer
+    border: 1px solid $primary
 
+.btn:hover
+  background-color: #fff
+  color: $primary
+  border: 1px solid $primary
 
 .margin-top-0
   margin-top: 0 !important

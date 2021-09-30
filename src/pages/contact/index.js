@@ -34,14 +34,15 @@ export default class Index extends React.Component {
   }
 
   render() {
+    const { contact } = this.state;
     return (
       <Layout>
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Contact</h1>
+              <h1>Contact Us</h1>
               <form
-                name="contact"
+                name={contact}
                 method="post"
                 action="/contact/thanks/"
                 data-netlify="true"
@@ -58,7 +59,7 @@ export default class Index extends React.Component {
                 </div>
                 <div className="field">
                   <label className="label" htmlFor={'name'}>
-                    Your name
+                    Name 
                   </label>
                   <div className="control">
                     <input
@@ -67,6 +68,21 @@ export default class Index extends React.Component {
                       name={'name'}
                       onChange={this.handleChange}
                       id={'name'}
+                      required={true}
+                    />
+                  </div>
+                </div>
+                <div className="field">
+                  <label className="label" htmlFor={'phoneNumber'}>
+                    Phone Number 
+                  </label>
+                  <div className="control">
+                    <input
+                      className="input"
+                      type={'tel'}
+                      name={'phoneNumber'}
+                      onChange={this.handleChange}
+                      id={'phoneNumber'}
                       required={true}
                     />
                   </div>
@@ -87,6 +103,27 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
+                  <label className="label" htmlFor={'contact'}>
+                  Who would you like to get in touch with? 
+                  </label>
+                  <div className="control">
+                    <div className="select">
+                      <select 
+                      defaultValue="default"
+                      className="select"
+                      name={'contact'}
+                      id={'contact'}
+                      required={true}
+                      onChange={this.handleChange}
+                      >
+                        <option value="default">Select ... </option>
+                        <option value="sales" >Sales</option>
+                        <option value="service" >Service</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div className="field">
                   <label className="label" htmlFor={'message'}>
                     Message
                   </label>
@@ -101,8 +138,8 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                  <button className="button is-link" type="submit">
-                    Send
+                  <button className="btn is-parimary is-light is-link" type="submit">
+                    CONTACT US 
                   </button>
                 </div>
               </form>
