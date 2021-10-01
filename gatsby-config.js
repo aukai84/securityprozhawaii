@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Security Proz Hawaii',
     description:
-      "Security Proz Hawaii is the newest up and coming security alarm company. They offer protection to local, commercial, residential, and government entities.  A company you can depend on with 24/7 customer service, offering the latest state of the art monitoring stations. You can count on us to give you peace of mind at your fingertips.",
+      "Security Proz Hawaii is the newest up and coming security alarm company. They offer protection to local, commercial, residential, and government entities.",
   },
   plugins: [
     'gatsby-plugin-react-helmet',
