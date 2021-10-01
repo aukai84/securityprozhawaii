@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Security Proz Hawaii',
     description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+      "Security Proz Hawaii is the newest up and coming security alarm company. They offer protection to local, commercial, residential, and government entities.  A company you can depend on with 24/7 customer service, offering the latest state of the art monitoring stations. You can count on us to give you peace of mind at your fingertips.",
   },
   plugins: [
     'gatsby-plugin-react-helmet',
