@@ -47,16 +47,16 @@ export const ServicePageTemplate = ({
             </div>
           </div>
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-10 is-offset-1 pt-6">
               <div className="columns is-multiline">
                 {intro.blurbs.map((item, i) => {
                   const even = i % 2 == 0;
                   return (
-                    <div className="column is-12">
+                    <div className="column is-12 pb-6 pt-6">
                       <div className="columns">
                         {even ? (
                           <>
-                            <div className="column is-6">
+                            <div className="column is-6 service-item__image">
                               <div 
                                 style={{
                                   width: "100%",
@@ -66,16 +66,30 @@ export const ServicePageTemplate = ({
                                 <PreviewCompatibleImage imageInfo={item} />
                               </div>
                             </div>
-                            <div className="column is-6 has-text-centered pt-4">
-                              <h3>{item.heading}</h3>
-                              <p>{item.text}</p>
+                            <div className="column is-6 service-item__description">
+                              <div className="pb-4">
+                                <h1>{item.heading}</h1>
+                              </div>
+                              <h5>{item.subHeading}</h5>
+                              <ul>
+                                {item.attributes.map(attribute => (
+                                  <li>{attribute.text}</li>
+                                ))}
+                              </ul>
                             </div>
                           </>
                         ) : 
                           <>
-                            <div className="column is-6 has-text-centered">
-                              <h3>{item.heading}</h3>
-                              <p>{item.text}</p>
+                            <div className="column is-6 service-item__description">
+                              <div className="pb-4">
+                                <h1>{item.heading}</h1>
+                              </div>
+                              <h5>{item.subHeading}</h5>
+                              <ul>
+                                {item.attributes.map(attribute => (
+                                  <li>{attribute.text}</li>
+                                ))}
+                              </ul>
                             </div>
                             <div style={{
                               width: "100%",
@@ -170,7 +184,6 @@ ServicePageTemplate.propTypes = {
 
 const ServicePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log('data', frontmatter.intro)
 
   return (
     <Layout>
@@ -222,8 +235,11 @@ export const servicePageQuery = graphql`
                 }
               }
             }
-            text
             heading 
+            subHeading,
+            attributes { 
+              text
+            }
           }
           heading
           description

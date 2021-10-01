@@ -133,7 +133,7 @@ export const IndexPageTemplate = ({
                   <div className="border-bottom pb-6">
                     <Features imageWidth="125px" gridItems={intro.blurbs} />
                   </div>
-                  <section className="section">
+                  <section className="section px-0">
                     <div className="container">
                       <div className="content">
                         <h1>Get in Touch With a Specialist</h1>

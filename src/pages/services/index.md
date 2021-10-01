@@ -12,12 +12,34 @@ intro:
   blurbs:
     - image: /img/frontporch_fb.jpg
       heading: HD Video Security
+      subHeading: It's clearly smart protection
+      attributes:
+        - text: look in on your home or see who's at your front door from virtually
+            anywhere with clear HD video
+        - text: indoor/outdoor cameras + doorbell cameras
+        - text: 24/7 playback NVR
     - image: /img/p-3.jpeg
       heading: Residential
+      subHeading: Turn your house into a smart home
+      attributes:
+        - text: perimeter cameras
+        - text: smart appliances
+        - text: smart home automation
     - image: /img/p.jpeg
       heading: Commercial
+      subHeading: Monitor your business from anywhere
+      attributes:
+        - text: surveillance
+        - text: access control
+        - text: security consulting
     - image: /img/syracuse-operations.jpg
       heading: Award-winning monitoring
+      subHeading: We don't sleep so you can rest easy
+      attributes:
+        - text: state of the art monitoring station
+        - text: 24/7 monitoring
+        - text: alarm.com app
+        - text: rapid response technology
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
