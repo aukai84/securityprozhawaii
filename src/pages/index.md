@@ -10,7 +10,7 @@ mainpitch:
     protect our Ohana, businesses, and property.  The crime here has risen to an
     alarming rate, and it is Security Proz objective to give our islanders the
     best prices and cutting edge technology available.  Prevention is the best
-    solution, we don't want you to be a victim, go with the Proz.
+    solution, we don't want you to be a victim, go with the ProZ.
 description: Security Proz is Hawaii's leading alarm company.
 intro:
   blurbs:

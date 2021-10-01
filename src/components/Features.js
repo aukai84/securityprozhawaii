@@ -16,7 +16,7 @@ const FeatureGrid = ({ gridItems, imageWidth }) => (
             >
               <PreviewCompatibleImage imageInfo={item} />
             </div>
-            <h2>{item.heading}</h2>
+            <h3 className="has-text-weight-medium">{item.heading}</h3>
             <p>{item.text}</p>
           </div>
         </section>

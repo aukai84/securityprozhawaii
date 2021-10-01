@@ -40,7 +40,7 @@ export default class Index extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Contact Us</h1>
+              <h1 className="has-text-weight-medium">Contact Us</h1>
               <form
                 name={contact}
                 method="post"
@@ -58,9 +58,9 @@ export default class Index extends React.Component {
                   </label>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'name'}>
+                  {/* <label className="label" htmlFor={'name'}>
                     Name 
-                  </label>
+                  </label> */}
                   <div className="control">
                     <input
                       className="input"
@@ -68,14 +68,15 @@ export default class Index extends React.Component {
                       name={'name'}
                       onChange={this.handleChange}
                       id={'name'}
+                      placeholder={'Name'}
                       required={true}
                     />
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'phoneNumber'}>
+                  {/* <label className="label" htmlFor={'phoneNumber'}>
                     Phone Number 
-                  </label>
+                  </label> */}
                   <div className="control">
                     <input
                       className="input"
@@ -83,14 +84,15 @@ export default class Index extends React.Component {
                       name={'phoneNumber'}
                       onChange={this.handleChange}
                       id={'phoneNumber'}
+                      placeholder={'Phone Number'}
                       required={true}
                     />
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'email'}>
+                  {/* <label className="label" htmlFor={'email'}>
                     Email
-                  </label>
+                  </label> */}
                   <div className="control">
                     <input
                       className="input"
@@ -98,6 +100,7 @@ export default class Index extends React.Component {
                       name={'email'}
                       onChange={this.handleChange}
                       id={'email'}
+                      placeholder={'Email Address'}
                       required={true}
                     />
                   </div>
@@ -124,8 +127,8 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'message'}>
-                    Message
+                  <label className="label has-text-weight-normal" htmlFor={'message'}>
+                    Please leave a brief message addressing your inquiry below 
                   </label>
                   <div className="control">
                     <textarea
@@ -133,6 +136,7 @@ export default class Index extends React.Component {
                       name={'message'}
                       onChange={this.handleChange}
                       id={'message'}
+                      placeholder={'Message'}
                       required={true}
                     />
                   </div>

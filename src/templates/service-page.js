@@ -51,16 +51,14 @@ export const ServicePageTemplate = ({
               <div className="columns is-multiline">
                 {intro.blurbs.map((item, i) => {
                   const even = i % 2 == 0;
+                  const imagePosition = even ? 'left' : 'right';
                   return (
                     <div className="column is-12 pb-6 pt-6">
                       <div className="columns">
-                        {even ? (
-                          <>
-                            <div className="column is-6 service-item__image">
+                            <div className="column is-6 service-item__image service-item__position">
                               <div 
                                 style={{
                                   width: "100%",
-                                  height: 'auto'
                                 }}
                               >
                                 <PreviewCompatibleImage imageInfo={item} />
@@ -77,28 +75,6 @@ export const ServicePageTemplate = ({
                                 ))}
                               </ul>
                             </div>
-                          </>
-                        ) : 
-                          <>
-                            <div className="column is-6 service-item__description">
-                              <div className="pb-4">
-                                <h1>{item.heading}</h1>
-                              </div>
-                              <h5>{item.subHeading}</h5>
-                              <ul>
-                                {item.attributes.map(attribute => (
-                                  <li>{attribute.text}</li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div style={{
-                              width: "100%",
-                              height: 'auto'
-                            }}>
-                              <PreviewCompatibleImage imageInfo={item} />
-                            </div>
-                          </>
-                        }
                     </div>
                     </div>
                   )

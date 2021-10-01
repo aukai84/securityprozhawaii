@@ -111,10 +111,10 @@ export const IndexPageTemplate = ({
                       <img src={logoWithText} />
                     </div>
                     <div className="has-text-centered">
-                      <h1 className="title has-text-primary">{mainpitch.title}</h1>
+                      <h1 className="title has-text-primary has-text-weight-normal">{mainpitch.title}</h1>
                     </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
+                    <div>
+                      <h3 className="subtitle has-text-weight-normal">{mainpitch.description}</h3>
                     </div>
                   </div>
                   <div className="content pt-6 pb-6">
@@ -124,10 +124,10 @@ export const IndexPageTemplate = ({
                   </div>
                   <div className="columns">
                     <div className="column is-12 has-text-centered pb-4" >
-                      <h3 className="has-text-weight-semibold is-size-4">
+                      <h3 className="has-text-weight-medium is-size-4">
                         {heading}
                       </h3>
-                      <p>{description}</p>
+                      <p className="has-text-weight-normal is-italic">{description}</p>
                     </div>
                   </div>
                   <div className="border-bottom pb-6">
@@ -136,7 +136,7 @@ export const IndexPageTemplate = ({
                   <section className="section px-0">
                     <div className="container">
                       <div className="content">
-                        <h1>Get in Touch With a Specialist</h1>
+                        <h1 className="has-text-weight-medium">Get in Touch With a Specialist</h1>
                         <form
                           name={formName}
                           method="post"
@@ -154,45 +154,48 @@ export const IndexPageTemplate = ({
                             </label>
                           </div>
                           <div className="field">
-                            <label className="label" htmlFor={'name'}>
+                            {/* <label className="label has-text-weight-medium" htmlFor={'name'}>
                               Name
-                            </label>
+                            </label> */}
                             <div className="control">
                               <input
                                 className="input"
                                 type={'text'}
                                 name={'name'}
                                 id={'name'}
+                                placeholder={'Name'}
                                 required={true}
                                 onChange={handleChange}
                               />
                             </div>
                           </div>
                           <div className="field">
-                            <label className="label" htmlFor={'phoneNumber'}>
+                            {/* <label className="label has-text-weight-medium" htmlFor={'phoneNumber'}>
                               Phone Number 
-                            </label>
+                            </label> */}
                             <div className="control">
                               <input
                                 className="input"
                                 type={'tel'}
                                 name={'phoneNumber'}
                                 id={'phoneNumber'}
+                                placeholder={'Phone Number'}
                                 required={true}
                                 onChange={handleChange}
                               />
                             </div>
                           </div>
                           <div className="field">
-                            <label className="label" htmlFor={'email'}>
+                            {/* <label className="label has-text-weight-medium" htmlFor={'email'}>
                               Email
-                            </label>
+                            </label> */}
                             <div className="control">
                               <input
                                 className="input"
                                 type={'email'}
                                 name={'email'}
                                 id={'email'}
+                                placeholder={'Email Address'}
                                 required={true}
                                 onChange={handleChange}
                               />
@@ -220,14 +223,15 @@ export const IndexPageTemplate = ({
                             </div>
                           </div>
                           <div className="field">
-                            <label className="label" htmlFor={'message'}>
-                              Message
+                            <label className="label has-text-weight-normal" htmlFor={'message'}>
+                              Please leave a brief message addressing your inquiry below
                             </label>
                             <div className="control">
                               <textarea
                                 className="textarea"
                                 name={'message'}
                                 id={'message'}
+                                placeholder={'Message'}
                                 required={true}
                                 onChange={handleChange}
                               />
