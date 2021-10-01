@@ -117,13 +117,13 @@ export const IndexPageTemplate = ({
                       <h3 className="subtitle">{mainpitch.description}</h3>
                     </div>
                   </div>
-                  <div className="content pt-6">
+                  <div className="content pt-6 pb-6">
                     <div>
                       <img src={productsImage} />
                     </div>
                   </div>
                   <div className="columns">
-                    <div className="column is-12 has-text-centered">
+                    <div className="column is-12 has-text-centered pb-4" >
                       <h3 className="has-text-weight-semibold is-size-4">
                         {heading}
                       </h3>
