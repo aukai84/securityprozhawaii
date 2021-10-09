@@ -47,10 +47,22 @@
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "format": "pretty-quick",
+    "lint": "eslint --ext .jsx,.js src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "yarn lint"
+    }
+  },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1"
   }
 }
