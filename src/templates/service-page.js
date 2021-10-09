@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import Testimonials from '../components/Testimonials'
-import Pricing from '../components/Pricing'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Features from "../components/Features";
+import Testimonials from "../components/Testimonials";
+import Pricing from "../components/Pricing";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 export const ServicePageTemplate = ({
   image,
@@ -30,8 +30,8 @@ export const ServicePageTemplate = ({
       <h2
         className="has-text-weight-bold is-size-1"
         style={{
-          color: 'white',
-          padding: '1rem',
+          color: "white",
+          padding: "1rem",
         }}
       >
         {title}
@@ -51,34 +51,34 @@ export const ServicePageTemplate = ({
               <div className="columns is-multiline">
                 {intro.blurbs.map((item, i) => {
                   const even = i % 2 == 0;
-                  const imagePosition = even ? 'left' : 'right';
+                  const imagePosition = even ? "left" : "right";
                   return (
                     <div className="column is-12 pb-6 pt-6">
                       <div className="columns">
-                            <div className="column is-6 service-item__image service-item__position">
-                              <div 
-                                style={{
-                                  width: "100%",
-                                }}
-                              >
-                                <PreviewCompatibleImage imageInfo={item} />
-                              </div>
-                            </div>
-                            <div className="column is-6 service-item__description">
-                              <div className="pb-4">
-                                <h1>{item.heading}</h1>
-                              </div>
-                              <h5>{item.subHeading}</h5>
-                              <ul>
-                                {item.attributes.map(attribute => (
-                                  <li>{attribute.text}</li>
-                                ))}
-                              </ul>
-                            </div>
+                        <div className="column is-6 service-item__image service-item__position">
+                          <div
+                            style={{
+                              width: "100%",
+                            }}
+                          >
+                            <PreviewCompatibleImage imageInfo={item} />
+                          </div>
+                        </div>
+                        <div className="column is-6 service-item__description">
+                          <div className="pb-4">
+                            <h1>{item.heading}</h1>
+                          </div>
+                          <h5>{item.subHeading}</h5>
+                          <ul>
+                            {item.attributes.map((attribute) => (
+                              <li>{attribute.text}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                    </div>
-                  )
-                })} 
+                  );
+                })}
               </div>
               {/* <Features imageWidth="200px" gridItems={intro.blurbs} /> */}
               {/* <div className="columns">
@@ -132,7 +132,7 @@ export const ServicePageTemplate = ({
       </div>
     </section>
   </div>
-)
+);
 
 ServicePageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -156,7 +156,7 @@ ServicePageTemplate.propTypes = {
     description: PropTypes.string,
     plans: PropTypes.array,
   }),
-}
+};
 
 const ServicePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
@@ -175,8 +175,8 @@ const ServicePage = ({ data }) => {
         pricing={frontmatter.pricing}
       />
     </Layout>
-  )
-}
+  );
+};
 
 ServicePage.propTypes = {
   data: PropTypes.shape({
@@ -184,9 +184,9 @@ ServicePage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default ServicePage 
+export default ServicePage;
 
 export const servicePageQuery = graphql`
   query ServicePage($id: String!) {
@@ -211,9 +211,9 @@ export const servicePageQuery = graphql`
                 }
               }
             }
-            heading 
-            subHeading,
-            attributes { 
+            heading
+            subHeading
+            attributes {
               text
             }
           }
@@ -278,4 +278,4 @@ export const servicePageQuery = graphql`
       }
     }
   }
-`
+`;
