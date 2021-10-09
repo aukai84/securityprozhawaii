@@ -5,7 +5,7 @@
     "es6": true
   },
   "plugins": ["import"],
-  "extends": ["react-app", "plugin:prettier/recommended"],
+  "extends": ["plugin:react/recommended", "plugin:prettier/recommended"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
