@@ -57,10 +57,10 @@
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
-    "format": "pretty-quick",
+    "format-changed": "pretty-quick",
     "lint": "eslint --ext .jsx,.js src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean-up": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
+    "format-all": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
   },
   "husky": {
     "hooks": {
