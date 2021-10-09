@@ -12,6 +12,9 @@
     "sourceType": "module",
     "requireConfigFile": "false"
   },
+  "babelOptions": {
+    "configfile": "./.babelrc"
+  },
   "rules": {
     "no-console": "warn",
     "no-eval": "error",
