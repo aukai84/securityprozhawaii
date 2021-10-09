@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-import { navigate } from 'gatsby-link'
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
+import { navigate } from "gatsby-link";
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import Layout from "../components/Layout";
+import Features from "../components/Features";
+import BlogRoll from "../components/BlogRoll";
 
-import logoWithText from '../img/logo_with_text.png'
-import productsImage from '../img/products.jpg';
+import logoWithText from "../img/logo_with_text.png";
+import productsImage from "../img/products.jpg";
 
 function encode(data) {
   return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 }
 
 export const IndexPageTemplate = ({
@@ -25,33 +25,32 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => {
-
-  const [formName, setFormName] = useState('service');
+  const [formName, setFormName] = useState("service");
   const [formValues, setFormValues] = useState({ isValidated: false });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues((formValues) => ({
       ...formValues,
-      [name]: value
-    })) 
-  }
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': form.getAttribute('name'),
-        'contact': formName,
+        "form-name": form.getAttribute("name"),
+        contact: formName,
         ...formValues,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
-  }
+      .then(() => navigate(form.getAttribute("action")))
+      .catch((error) => alert(error));
+  };
 
   return (
     <div>
@@ -61,18 +60,18 @@ export const IndexPageTemplate = ({
           backgroundImage: `url(${
             !!image.childImageSharp ? image.childImageSharp.fluid.src : image
           })`,
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div
           style={{
-            display: 'flex',
-            height: '150px',
-            lineHeight: '1',
-            justifyContent: 'space-around',
-            alignItems: 'left',
-            flexDirection: 'column',
+            display: "flex",
+            height: "150px",
+            lineHeight: "1",
+            justifyContent: "space-around",
+            alignItems: "left",
+            flexDirection: "column",
           }}
         >
           {/* <h1
@@ -111,10 +110,14 @@ export const IndexPageTemplate = ({
                       <img src={logoWithText} />
                     </div>
                     <div className="has-text-centered">
-                      <h1 className="title has-text-primary has-text-weight-normal">{mainpitch.title}</h1>
+                      <h1 className="title has-text-primary has-text-weight-normal">
+                        {mainpitch.title}
+                      </h1>
                     </div>
                     <div>
-                      <h3 className="subtitle has-text-weight-normal">{mainpitch.description}</h3>
+                      <h3 className="subtitle has-text-weight-normal">
+                        {mainpitch.description}
+                      </h3>
                     </div>
                   </div>
                   <div className="content pt-6 pb-6">
@@ -123,10 +126,8 @@ export const IndexPageTemplate = ({
                     </div>
                   </div>
                   <div className="columns">
-                    <div className="column is-12 has-text-centered pb-4" >
-                      <h3 className="has-text-weight-medium is-size-4">
-                        {heading}
-                      </h3>
+                    <div className="column is-12 has-text-centered pb-4">
+                      <h3 className="has-text-weight-medium is-size-4">{heading}</h3>
                       <p className="has-text-weight-normal is-italic">{description}</p>
                     </div>
                   </div>
@@ -136,7 +137,9 @@ export const IndexPageTemplate = ({
                   <section className="section px-0">
                     <div className="container">
                       <div className="content">
-                        <h1 className="has-text-weight-medium">Get in Touch With a Specialist</h1>
+                        <h1 className="has-text-weight-medium">
+                          Get in Touch With a Specialist
+                        </h1>
                         <form
                           name={formName}
                           method="post"
@@ -149,7 +152,7 @@ export const IndexPageTemplate = ({
                           <input type="hidden" name="form-name" value="contact" />
                           <div hidden>
                             <label>
-                              Don’t fill this out:{' '}
+                              Don’t fill this out:{" "}
                               <input name="bot-field" onChange={handleChange} />
                             </label>
                           </div>
@@ -160,10 +163,10 @@ export const IndexPageTemplate = ({
                             <div className="control">
                               <input
                                 className="input"
-                                type={'text'}
-                                name={'name'}
-                                id={'name'}
-                                placeholder={'Name'}
+                                type={"text"}
+                                name={"name"}
+                                id={"name"}
+                                placeholder={"Name"}
                                 required={true}
                                 onChange={handleChange}
                               />
@@ -176,10 +179,10 @@ export const IndexPageTemplate = ({
                             <div className="control">
                               <input
                                 className="input"
-                                type={'tel'}
-                                name={'phoneNumber'}
-                                id={'phoneNumber'}
-                                placeholder={'Phone Number'}
+                                type={"tel"}
+                                name={"phoneNumber"}
+                                id={"phoneNumber"}
+                                placeholder={"Phone Number"}
                                 required={true}
                                 onChange={handleChange}
                               />
@@ -192,54 +195,60 @@ export const IndexPageTemplate = ({
                             <div className="control">
                               <input
                                 className="input"
-                                type={'email'}
-                                name={'email'}
-                                id={'email'}
-                                placeholder={'Email Address'}
+                                type={"email"}
+                                name={"email"}
+                                id={"email"}
+                                placeholder={"Email Address"}
                                 required={true}
                                 onChange={handleChange}
                               />
                             </div>
                           </div>
                           <div className="field">
-                            <label className="label" htmlFor={'contact'}>
-                            Who would you like to get in touch with? 
+                            <label className="label" htmlFor={"contact"}>
+                              Who would you like to get in touch with?
                             </label>
                             <div className="control">
                               <div className="select">
-                                <select 
-                                defaultValue="default"
-                                className="select"
-                                name={'contact'}
-                                id={'contact'}
-                                required={true}
-                                onChange={(e) => setFormName(e.target.value)}
+                                <select
+                                  defaultValue="default"
+                                  className="select"
+                                  name={"contact"}
+                                  id={"contact"}
+                                  required={true}
+                                  onChange={(e) => setFormName(e.target.value)}
                                 >
                                   <option value="default">Select ... </option>
-                                  <option value="sales" >Sales</option>
-                                  <option value="service" >Service</option>
+                                  <option value="sales">Sales</option>
+                                  <option value="service">Service</option>
                                 </select>
                               </div>
                             </div>
                           </div>
                           <div className="field">
-                            <label className="label has-text-weight-normal" htmlFor={'message'}>
+                            <label
+                              className="label has-text-weight-normal"
+                              htmlFor={"message"}
+                            >
                               Please leave a brief message addressing your inquiry below
                             </label>
                             <div className="control">
                               <textarea
                                 className="textarea"
-                                name={'message'}
-                                id={'message'}
-                                placeholder={'Message'}
+                                name={"message"}
+                                id={"message"}
+                                placeholder={"Message"}
                                 required={true}
                                 onChange={handleChange}
                               />
                             </div>
                           </div>
                           <div className="field">
-                            <button className="btn is-primary is-light is-link" type="submit">
-                              CONNECT WITH OUR TEAM 
+                            <button
+                              className="btn is-primary is-light is-link"
+                              type="submit"
+                            >
+                              CONNECT WITH OUR TEAM
                             </button>
                           </div>
                         </form>
@@ -272,7 +281,7 @@ export const IndexPageTemplate = ({
       </section>
     </div>
   );
-}
+};
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -284,10 +293,10 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-}
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -301,8 +310,8 @@ const IndexPage = ({ data }) => {
         intro={frontmatter.intro}
       />
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -310,9 +319,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -351,4 +360,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -16,7 +16,7 @@ intro:
   blurbs:
     - image: /img/user-shield-solid-1-.png
       text: >-
-        
+
         The best in home security systems.  When home security meets smart technology, you get powerful peace of mind.
       heading: Home Security
     - image: /img/tablet-alt-solid-2-.png
