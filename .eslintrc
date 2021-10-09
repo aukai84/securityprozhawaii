@@ -4,6 +4,7 @@
     "jest": true,
     "es6": true
   },
+  "parser": "@babel/eslint-parser",
   "plugins": ["import"],
   "extends": ["plugin:react/recommended", "plugin:prettier/recommended"],
   "parserOptions": {
