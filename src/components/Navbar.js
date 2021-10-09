@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import logo from "../img/logo.jpg";
+import { PhoneIcon } from "./icons";
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -72,6 +73,15 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/contact">
                 Contact Us
               </Link>
+              <div className="navbar-item">
+                <a
+                  href="tel:18085237769"
+                  className="btn is-flex is-flex-direction-row is-align-items-flex-end is-justify-content-center"
+                >
+                  <PhoneIcon className="mr-2" />
+                  <p>Call Us Now</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>

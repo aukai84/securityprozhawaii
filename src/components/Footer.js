@@ -61,6 +61,11 @@ const Footer = class extends React.Component {
                           Contact
                         </Link>
                       </li>
+                      <li>
+                        <a className="navbar-item" href="tel:18085237769">
+                          Call Us
+                        </a>
+                      </li>
                     </ul>
                   </section>
                 </div>
