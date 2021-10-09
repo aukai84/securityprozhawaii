@@ -53,7 +53,7 @@ export const ServicePageTemplate = ({
                   const even = i % 2 == 0;
                   const imagePosition = even ? "left" : "right";
                   return (
-                    <div className="column is-12 pb-6 pt-6">
+                    <div key={item.heading} className="column is-12 pb-6 pt-6">
                       <div className="columns">
                         <div className="column is-6 service-item__image service-item__position">
                           <div
@@ -71,7 +71,7 @@ export const ServicePageTemplate = ({
                           <h5>{item.subHeading}</h5>
                           <ul>
                             {item.attributes.map((attribute) => (
-                              <li>{attribute.text}</li>
+                              <li key={attribute.text}>{attribute.text}</li>
                             ))}
                           </ul>
                         </div>
