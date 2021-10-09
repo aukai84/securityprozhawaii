@@ -1,6 +1,6 @@
 import React from "react";
 
-const PhoneIcon = ({}) => (
+const PhoneIcon = ({ size = 24, ...props }) => (
   <svg
     aria-hidden="true"
     focusable="false"
@@ -8,8 +8,11 @@ const PhoneIcon = ({}) => (
     data-icon="phone-alt"
     className="svg-inline--fa fa-phone-alt fa-w-16"
     role="img"
+    height={size}
+    width={size}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    {...props}
   >
     <path
       fill="currentColor"
@@ -17,3 +20,5 @@ const PhoneIcon = ({}) => (
     ></path>
   </svg>
 );
+
+export default PhoneIcon;
