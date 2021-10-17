@@ -39,6 +39,15 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
+        <div className="navbar-item call-button-main">
+          <a
+            href="tel:18085237769"
+            className="btn is-flex is-flex-direction-row is-align-items-flex-end is-justify-content-center"
+          >
+            <PhoneIcon className="mr-2" />
+            <p>Call one of our ProZ! (808) 523-7769</p>
+          </a>
+        </div>
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
@@ -73,7 +82,7 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/contact">
                 Contact Us
               </Link>
-              <div className="navbar-item">
+              <div className="navbar-item call-button-mobile">
                 <a
                   href="tel:18085237769"
                   className="btn is-flex is-flex-direction-row is-align-items-flex-end is-justify-content-center"
