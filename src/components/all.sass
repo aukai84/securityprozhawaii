@@ -152,6 +152,15 @@ $menu-label-color: $white-ter
     font-weight: 450 !important
     font-style: italic !important
 
+.call-button-main
+  position: absolute !important
+  top: 50% !important
+  left: 50% !important
+  transform: translate(-50%, -50%) !important
+  z-index: 2 !important
+
+.call-button-mobile
+  display: none !important
 
 @import "~bulma"
 
@@ -176,3 +185,9 @@ $menu-label-color: $white-ter
       max-width: 75% !important
     h1
       text-align: center !important
+
+  .call-button-main
+    display: none !important
+
+  .call-button-mobile
+    display: inline !important
