@@ -16,7 +16,7 @@ intro:
   blurbs:
     - image: /img/user-shield-solid-1-.png
       text: >-
-
+        
         The best in home security systems.  When home security meets smart technology, you get powerful peace of mind.
       heading: Home Security
     - image: /img/tablet-alt-solid-2-.png
@@ -25,8 +25,9 @@ intro:
         thermostates.
       heading: Smart Home Automation
     - image: /img/lightbulb-regular-1-.png
-      text: |
-        Improve the quality of life through innovation and technology.
+      text: >
+        Improve the quality of life through innovation.  Bettering home security
+        with state of the art technology.
       heading: Innovation
     - image: /img/handshake-solid-1-.png
       text: Rather than build everything from scratch, we leverage the top global
